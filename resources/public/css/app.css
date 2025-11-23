@@ -1,0 +1,94 @@
+:root {
+    --bg:#10141a;
+    --panel:#1d232b;
+    --accent:#4da3ff;
+    --text:#e6e9ed;
+    --danger:#ff4d61;
+    --radius:6px;
+    --padding:12px;
+    font-family: system-ui, Arial, sans-serif;
+}
+body {
+    background: var(--bg);
+    color: var(--text);
+    margin:0;
+}
+.topbar {
+    background: var(--panel);
+    padding: var(--padding);
+    border-bottom: 1px solid #2d343c;
+}
+.container {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+h1,h2 { font-weight:500; }
+#contact-form, #contacts {
+    background: var(--panel);
+    padding: 16px;
+    margin-bottom: 24px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,.4);
+}
+.row {
+    display:flex;
+    flex-direction:column;
+    margin-bottom:10px;
+}
+label { font-size: 12px; text-transform: uppercase; letter-spacing: .5px; }
+input {
+    padding:8px;
+    border:1px solid #2d343c;
+    background:#14191f;
+    color: var(--text);
+    border-radius: var(--radius);
+}
+button {
+    background: var(--accent);
+    color:#fff;
+    border:none;
+    padding:10px 16px;
+    border-radius: var(--radius);
+    cursor:pointer;
+    font-weight:500;
+}
+button.danger { background: var(--danger); }
+table {
+    width:100%;
+    border-collapse: collapse;
+    font-size:14px;
+}
+th, td {
+    padding:8px;
+    border-bottom:1px solid #2d343c;
+}
+tr:hover { background:#222a33; }
+.controls {
+    display:flex;
+    gap:8px;
+    margin-bottom:12px;
+}
+#searchBox {
+    flex:1;
+}
+.status {
+    margin-top:8px;
+    font-size:12px;
+    min-height:16px;
+}
+.status.error { color: var(--danger); }
+.status.success { color: var(--accent); }
+@media (max-width:700px){
+    table thead { display:none; }
+    table, tbody, tr, td { display:block; width:100%; }
+    tr { margin-bottom:12px; background:#14191f; padding:8px; border-radius: var(--radius); }
+    td { border:none; padding:4px 0; }
+    td::before {
+        content: attr(data-label);
+        font-size:11px;
+        text-transform: uppercase;
+        color:#8a93a0;
+        display:block;
+    }
+}
